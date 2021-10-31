@@ -32,7 +32,7 @@ navLinks.forEach(link => link.addEventListener("click", linkAction))
 const skillsContent = document.getElementsByClassName("skills__content"),
     skillsHeader = document.querySelectorAll(".skills__header");
 
-const toggleSkills = () => {
+function toggleSkills() {
     let itemClass = this.parentNode.className;
 
     for (i = 0; i < skillsContent.length; i++) {
@@ -115,7 +115,7 @@ let swiperTestimonial = new Swiper(".testimonial__container", {
     },
     breakpoints: {
         568: {
-            sliderPerView: 2,
+            slidesPerView: 2,
         }
     }
 });
