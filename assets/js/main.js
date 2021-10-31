@@ -32,7 +32,7 @@ navLinks.forEach(link => link.addEventListener("click", linkAction))
 const skillsContent = document.getElementsByClassName("skills__content"),
     skillsHeader = document.querySelectorAll(".skills__header");
 
-function toggleSkills() {
+const toggleSkills = () => {
     let itemClass = this.parentNode.className;
 
     for (i = 0; i < skillsContent.length; i++) {
@@ -123,7 +123,7 @@ let swiperTestimonial = new Swiper(".testimonial__container", {
 /*==================== SCROLL SECTION ACTIVE LINK ====================*/
 const sections = document.querySelectorAll("section[id]");
 
-function scrollActive() {
+const scrollActive = () => {
     const scrollY = window.pageYOffset;
 
     sections.forEach(current => {
@@ -141,3 +141,9 @@ function scrollActive() {
 window.addEventListener("scroll", scrollActive)
 
 /*==================== CHANGE BACKGROUND HEADER ====================*/
+const scrollHeader = () => {
+    const nav = document.getElementById('header')
+    // When the scroll is greater than 80 viewport height, add the scroll-header class to the header tag
+    if (this.scrollY >= 80) nav.classList.add('scroll-header'); else nav.classList.remove('scroll-header')
+}
+window.addEventListener('scroll', scrollHeader)
